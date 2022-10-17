@@ -56,8 +56,8 @@ smart_borders on
 smart_gaps on
 gaps inner 2
 
-# Default wallpaper (to change it, put image to ~/Pictures/wallpapers/ and name it main-wallpaper.*)
-output * bg "$HOME/Pictures/wallpapers/main-wallpaper.*" fill
+# Default wallpaper
+exec --no-startup-id "swaybg -i ~/Pictures/wallpapers/hannah-grace-dSqWwzrLJaQ-unsplash.jpg -m fill"
 
 # Keyboard layout
 input * {
