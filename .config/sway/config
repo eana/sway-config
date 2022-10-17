@@ -1,5 +1,10 @@
 ### Variables ###
 
+exec_always {
+  pkill kanshi
+  kanshi
+}
+
 # Logo key
 set $mod Mod4
 
@@ -19,19 +24,19 @@ set $ws6 6
 set $ws7 7
 
 # Locker
-set $locker swaylock-fancy
+set $locker swaylock -c 000000
 
 # Terminal emulator
 set $term xfce4-terminal
 
 # Application launcher
-set $menu j4-dmenu-desktop --dmenu='bemenu -iwbn -p "Run:" --fn "SF Pro Text Regular 10" --tb="#222222" --tf="#cb4b16" --hb="#222222" --hf="#cb4b16" --nb="#111111"  ' --term='xfce4-terminal'
+set $menu fuzzel -w 60 | xargs swaymsg exec --
 
 # File manager
 set $filer nautilus
 
 # Browser
-set $browser firefox
+set $browser google-chrome-stable
 
 # For gtk applications settings
 set $gnomeschema org.gnome.desktop.interface
@@ -52,16 +57,18 @@ smart_gaps on
 gaps inner 2
 
 # Default wallpaper (to change it, put image to ~/Pictures/wallpapers/ and name it main-wallpaper.*)
-# output * bg "$HOME/Pictures/wallpapers/main-wallpaper.*" fill
+output * bg "$HOME/Pictures/wallpapers/main-wallpaper.*" fill
 
 # Keyboard layout
 input * {
-    xkb_layout us,ua
+    repeat_delay 300
+    repeat_rate 40
+    xkb_layout us,se
     xkb_options grp:shift_caps_toggle
 }
 
 # Touchpad configuration (swaymsg -t get_inputs)
-input "1739:30966:Synaptics_TM3096-006" {
+input "1452:628:bcm5974" {
     dwt enabled
     tap enabled
     natural_scroll enabled
@@ -78,8 +85,8 @@ floating_modifier $mod normal
 ### Window rules ###
 
 # Link some programs to workspaces (swaymsg -t get_tree)
-assign [app_id="firefox"] workspace 1
-assign [app_id="telegramdesktop"] workspace 7
+assign [app_id="google-chrome"] workspace 1
+assign [app_id="telegramdesktop"] workspace 2
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -130,9 +137,7 @@ bindsym --to-code $mod+Return exec $term
 bindsym --to-code $mod+q kill
 
 # Start your launcher
-bindsym --to-code $mod+d exec bemenu-run -iwbn -p "Run:" --fn "SF Pro Text Regular 10" --tb="#222222" --tf="#cb4b16" --hb="#222222" --hf="#cb4b16" --nb="#111111"
-
-bindsym --to-code $mod+b exec $term -e 'bmenu'
+bindsym --to-code $mod+d exec $menu
 
 # Launch wifi choice
 bindsym --to-code $mod+n exec $term -e nmtui-connect
@@ -159,7 +164,7 @@ bindsym --to-code Print exec grim - | wl-copy && notify-send "Screenshot of whol
 
 # Take a screenshot of selected region to clipboard
 bindsym --to-code $mod+Print exec grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot of selected region saved to clipboard"
-    
+
 # Take a screenshot of focused window to clipboard
 bindsym --to-code $mod+Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy && notify-send "Screenshot of active window saved to clipboard"
 
@@ -169,7 +174,7 @@ bindsym --to-code Ctrl+Print exec grim ~/Pictures/screenshots/screenshot-"$(date
 
 # Take a screenshot of selected region
 bindsym --to-code $mod+Ctrl+Print exec grim -g "$(slurp)" ~/Pictures/screenshots/screenshot-"$(date +%s)".png && notify-send "Screenshot of selected region saved to folder"
-    
+
 # Take a screenshot of focused window
 bindsym --to-code $mod+Ctrl+Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" ~/Pictures/screenshot-"$(date +%s)".png && notify-send "Screenshot of active window saved to folder"
 
@@ -215,24 +220,25 @@ bindsym --to-code $mod+Shift+5 move container to workspace $ws5
 bindsym --to-code $mod+Shift+6 move container to workspace $ws6
 bindsym --to-code $mod+Shift+7 move container to workspace $ws7
 
-# Sreen brightness controls
-bindsym --to-code XF86MonBrightnessUp exec brightnessctl -q set +2% # increase screen brightness
-bindsym --to-code XF86MonBrightnessDown exec brightnessctl -q set 2%- # decrease screen brightness
-
-#Audio controls
-bindsym --to-code $mod+Ctrl+p exec pavucontrol
-bindsym --to-code XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
-bindsym --to-code XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
-bindsym --to-code XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle notify-send "Muted" # mute sound
-bindsym --to-code XF86AudioPlay exec playerctl play-pause
-bindsym --to-code XF86AudioPause exec playerctl play-pause
-bindsym --to-code XF86AudioNext exec playerctl next
-bindsym --to-code XF86AudioPrev exec playerctl previous
+# Media keys Volume Settings
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 # to increase 5%
+bindsym XF86AudioLowerVolume exec pamixer -d 5 # to decrease 5%
+bindsym XF86AudioMute exec amixer sset Master toggle
+# Media keys like Brightness|Mute|Play|Stop
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec light -s sysfs/backlight/gmux_backlight  -A 5
+bindsym XF86MonBrightnessDown exec light -s sysfs/backlight/gmux_backlight -U 5
+bindsym XF86KbdBrightnessUp exec light -s sysfs/leds/smc::kbd_backlight -A 5
+bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/smc::kbd_backlight -U 5
+# Same playback bindings for Keyboard media keys
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous#
 
 # Layout stuff:
 
 # You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
+# $mod+c or $mod+v, for horizontal and vertical splits
 # respectively.
 bindsym --to-code --to-code $mod+c splith; exec notify-send "Split horizontaly"
 bindsym --to-code --to-code $mod+v splitv; exec notify-send "Split verticaly"
@@ -288,6 +294,7 @@ mode "resize" {
     bindsym --to-code Return mode "default"
     bindsym --to-code Escape mode "default"
 }
+
 bindsym --to-code $mod+r mode "resize"
 
 # Sticky window
@@ -304,6 +311,7 @@ bindsym --to-code $mod+Delete exec swaynag -t mtype -m \
 # Shutdown/Logout menu
     set $mode_system System (l) lock, (e) exit, (s) suspend, (r) reboot, (Shift+s) Shutdown
     mode "$mode_system" {
+        bindsym b exec swaymsg exit
         bindsym l exec $locker, mode "default"
         bindsym e exec swaymsg exit, mode "default"
         bindsym s exec $locker && systemctl suspend, mode "default"
@@ -317,6 +325,10 @@ bindsym --to-code $mod+Delete exec swaynag -t mtype -m \
 
     bindsym $mod+Shift+e mode "$mode_system"
 
+### Disable laptop's screen when the lid is closed
+# swaymsg -t get_outputs
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
 
 ### Status bar ###
 
@@ -324,24 +336,10 @@ bar {
    swaybar_command waybar
 }
 
-# bar {
-#     position bottom
-
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
-
 ### Autostart ### (to fix time - timedatectl set-ntp true)
 
 exec killall /usr/bin/earlyoom
-exec sh -c "/usr/bin/earlyoom -r 0 -m 2,1 --prefer '^Web Content$' --avoid '^(sway|waybar|pacman|packagekitd|gnome-shell|gnome-session-c|gnome-session-b|lightdm|sddm|sddm-helper|gdm|gdm-wayland-ses|gdm-session-wor|gdm-x-session|Xorg|Xwayland|systemd|systemd-logind|dbus-daemon|dbus-broker|cinnamon|cinnamon-sessio|kwin_x11|kwin_wayland|plasmashell|ksmserver|plasma_session|startplasma-way|xfce4-session|mate-session|marco|lxqt-session|openbox)'"
+exec sh -c "/usr/bin/earlyoom -r 0 -m 2,1 --prefer '^Web Content$' --avoid '^(sway|waybar|pacman|packagekitd|gnome-shell|gnome-session-c|gnome-session-b|lighdm|sddm|sddm-helper|gdm|gdm-wayland-ses|gdm-session-wor|gdm-x-session|Xorg|Xwayland|systemd|systemd-logind|dbus-daemon|dbus-broker|cinnamon|cinnamon-sessio|kwin_x11|kwin_wayland|plasmashell|ksmserver|plasma_session|startplasma-way|xfce4-session|mate-session|marco|lxqt-session|openbox)'"
 exec sleep 5
 exec --no-startup-id blueman-applet
 exec_always killall pulseaudio
@@ -352,20 +350,12 @@ exec --no-startup-id /usr/bin/nm-applet --indicator
 exec --no-startup-id /usr/bin/redshift
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
-exec ~/.azotebg
-exec ~/.config/sway/modules/critical_battery_beeper/criticalBatteryBeeper
+exec ~/.config/sway/modules/critical_battery_beeper/critical_battery_beeper.py
 exec swayidle -w \
     timeout 1200 'swaylock-fancy' \
     timeout 1300 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock-fancy'
-
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
-# exec_always sh -c "GDK_BACKEND=X11 pamac-tray"
-# exec start-pulse-audio-x11
-# exec_always --no-startup-id sbxkb
-# exec pa-applet
 
 # Gtk applications settings
 exec_always {
@@ -378,10 +368,10 @@ exec_always {
 include /etc/sway/config.d/*
 
 # Theme colors                                                  #f4692e
-#       class	            border	    background	text	    indicator	child_border			
-client.background	        n/a	        #ffffff	    n/a	        n/a	        n/a
-client.focused	            #99644c	    #773e28	    #ffffff	    #99644c	    #773e28
-client.focused_inactive	    #333333	    #5f676a	    #ffffff	    #484e50	    #5f676a
-client.unfocused	        #333333	    #222222	    #888888	    #292d2e	    #222222
-client.urgent	            #2f343a	    #900000	    #ffffff	    #900000	    #900000
-client.placeholder	        #000000	    #0c0c0c	    #ffffff	    #000000	    #0c0c0c
+#       class               border      background  text        indicator   child_border
+client.background           n/a         #ffffff     n/a         n/a         n/a
+client.focused              #99644c     #773e28     #ffffff     #99644c     #773e28
+client.focused_inactive     #333333     #5f676a     #ffffff     #484e50     #5f676a
+client.unfocused            #333333     #222222     #888888     #292d2e     #222222
+client.urgent               #2f343a     #900000     #ffffff     #900000     #900000
+client.placeholder          #000000     #0c0c0c     #ffffff     #000000     #0c0c0c

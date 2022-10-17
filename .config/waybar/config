@@ -2,27 +2,27 @@
     "layer": "top",
     "position": "bottom",
     "height": 24,
-    "modules-left": ["sway/workspaces", "custom/scratchpad-indicator", "custom/separator", "clock", "idle_inhibitor"],
+    "modules-left": ["sway/workspaces", "custom/scratchpad-indicator", "custom/separator", "idle_inhibitor"],
     "modules-center": ["sway/mode"],
-    "modules-right": ["custom/keyboard-layout", "pulseaudio", "backlight", "battery", "custom/separator", "cpu", "memory", "custom/separator", "tray"],
-    
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "",
-			"deactivated": ""
-		}
-	},
+    "modules-right": ["custom/keyboard-layout", "pulseaudio", "backlight", "battery", "custom/separator", "cpu", "memory", "custom/separator", "tray", "clock"],
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
 
     "sway/window": {
         "max-length": 50
     },
-	
-	"backlight": {
-		"device": "intel_backlight",
-		"format": "{percent}% {icon}",
-		"format-icons": ["", ""]
-	},
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
 
     "custom/separator": {
         "format": "|",
@@ -97,8 +97,9 @@
 
     "clock": {
         "interval": 1,
-        "format": " {:%H:%M  | %e %b %Y}",
-        "tooltip": false
+        "format": " {:%H:%M %d-%m-%Y}",
+        "tooltip-format":"<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "on-click":"/usr/bin/gnome-calendar"
     },
 
     "cpu": {

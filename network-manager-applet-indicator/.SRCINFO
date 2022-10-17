@@ -36,4 +36,3 @@ pkgname = nm-connection-editor-indicator
 	conflicts = nm-connection-editor
 	conflicts = libnm-gtk<1.8.18-1
 	replaces = libnm-gtk<1.8.18-1
-
