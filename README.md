@@ -1,5 +1,7 @@
 # Dotfiles for sway wm configuration
 
+This repository is heavily inspired from [201dreamers/sway-config](https://github.com/201dreamers/sway-config).
+
 ### Screenshots of my sway configuration
 
 ![Screenshot 7](./screenshots/screenshot-7.png "Screenshot 7")
@@ -26,7 +28,7 @@
 - [mpg123](https://archlinux.org/packages/extra/x86_64/mpg123/) - play sound from terminal
 - [otf-font-awesome](https://archlinux.org/packages/community/any/otf-font-awesome/)/[ttf-font-awesome](https://archlinux.org/packages/community/any/ttf-font-awesome/)/[powerline-fonts](https://aur.archlinux.org/packages/powerline-fonts-git) - awesome font
 - [polkit](https://archlinux.org/packages/extra/x86_64/polkit/)/[polkit-gnome](https://archlinux.org/packages/community/x86_64/polkit-gnome/)
-- [kanshi](https://archlinux.org/packages/community/x86_64/kanshi/) - dynamic screen configuration
+- [kanshi](https://aur.archlinux.org/packages/kanshi-git) - dynamic screen configuration
 
 ### Some features
 
