@@ -1,10 +1,5 @@
 ### Variables ###
 
-exec_always {
-  pkill kanshi
-  kanshi
-}
-
 # Logo key
 set $mod Mod4
 
@@ -359,6 +354,9 @@ exec_always {
     gsettings set $gnomeschema cursor-theme 'xcursor-breeze'
     gsettings set $gnomeschema font-name 'SF Pro Text Regular 10'
 }
+
+# Start kanshi.service
+exec_always "systemctl --user start kanshi.service"
 
 include /etc/sway/config.d/*
 
