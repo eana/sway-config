@@ -355,7 +355,7 @@ exec_always {
 }
 
 # Start kanshi.service
-exec_always "systemctl --user start kanshi.service"
+exec_always "systemctl --user restart kanshi.service"
 
 include /etc/sway/config.d/*
 
