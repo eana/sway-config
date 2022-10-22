@@ -8,25 +8,24 @@
 
 ### Used packages:
 
-- wofi - menu launcher
-- bmenu - alternative menu
-- swaylock-fancy - lockscreen
-- grim - screenshot and colorpick utility
-- slurp - utility for selecting an area
-- brightnessctl - for brightness control
-- pulseaudio/pavucontrol - for audio control
-- waybar - bar for swaywm
-- nm-applet/network-manager-applet-indicator - wifi applet
-- mako - nitification manager
-- earlyoom - out of memory manager
-- redshift/redshift-wayland - blue light filter
-- blueman/blueman-applet - bluetooth applet
-- parcellite - clipboard manager
-- gthumb - image viewer
-- nautilus - file manager
-- mpg123 - play sound from terminal
-- awesome font
-- (polkit-gnome-authentication, qt5ct, tlp, tlp-rdw)
+- [fuzzel](https://archlinux.org/packages/community/x86_64/fuzzel/) - menu launcher
+- [swaylock](https://archlinux.org/packages/community/x86_64/swaylock/) - lockscreen
+- [grim](https://archlinux.org/packages/community/x86_64/grim/) - screenshot and colorpick utility
+- [slurp](https://archlinux.org/packages/community/x86_64/slurp/) - utility for selecting an area
+- [light](https://archlinux.org/packages/community/x86_64/light/) - for brightness control
+- [pipewire](https://archlinux.org/packages/extra/x86_64/pipewire/)/[pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/) - for audio control
+- [waybar](https://archlinux.org/packages/community/x86_64/waybar/) - bar for swaywm
+- [network-manager-applet](https://archlinux.org/packages/extra/x86_64/network-manager-applet/) - wifi applet
+- [mako](https://archlinux.org/packages/community/x86_64/mako/) - notification manager
+- [earlyoom](https://archlinux.org/packages/community/x86_64/earlyoom/) - out of memory manager
+- [redshift-wayland](https://aur.archlinux.org/packages/redshift-wayland-git) - blue light filter
+- [blueman](https://archlinux.org/packages/community/x86_64/blueman/) - bluetooth applet
+- [parcellite](https://archlinux.org/packages/community/x86_64/parcellite/) - clipboard manager
+- [gthumb](https://archlinux.org/packages/extra/x86_64/gthumb/) - image viewer
+- [nautilus](https://archlinux.org/packages/extra/x86_64/nautilus/) - file manager
+- [mpg123](https://archlinux.org/packages/extra/x86_64/mpg123/) - play sound from terminal
+- [otf-font-awesome](https://archlinux.org/packages/community/any/otf-font-awesome/)/[ttf-font-awesome](https://archlinux.org/packages/community/any/ttf-font-awesome/)/[powerline-fonts](https://aur.archlinux.org/packages/powerline-fonts-git) - awesome font
+- [polkit](https://archlinux.org/packages/extra/x86_64/polkit/)/[polkit-gnome](https://archlinux.org/packages/community/x86_64/polkit-gnome/)
 
 ### Some features
 
@@ -61,8 +60,6 @@ Plays sound when capacity <= 10% every 60 seconds
 - $mod+Shift+r - reload
 - $mod+Return - start terminal
 - $mod+q - kill
-- $mod+a - start applications menu
-- $mod+b - start alternative terminal menu
 - $mod+d - start run menu
 - $mod+w - start browser
 - $mod+e - start file manager
@@ -78,4 +75,3 @@ Plays sound when capacity <= 10% every 60 seconds
 - $mod+$down - focus down
 - $mod+$up - focus up
 - $mod+$right - focus right
-- Soon
