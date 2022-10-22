@@ -71,7 +71,7 @@ input * {
 input "1452:628:bcm5974" {
     dwt enabled
     tap enabled
-    natural_scroll enabled
+    natural_scroll disabled
     middle_emulation enabled
 }
 
@@ -143,11 +143,6 @@ bindsym --to-code $mod+d exec $menu
 # Launch wifi choice
 bindsym --to-code $mod+n exec $term -e nmtui-connect
 
-# Launch categorized menu
-bindsym --to-code $mod+a exec --no-startup-id $menu
-
-bindsym --to-code $mod+z exec wofi
-
 # Start browser
 bindsym --to-code $mod+w exec $browser
 
@@ -168,7 +163,6 @@ bindsym --to-code $mod+Print exec grim -g "$(slurp)" - | wl-copy && notify-send 
 
 # Take a screenshot of focused window to clipboard
 bindsym --to-code $mod+Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy && notify-send "Screenshot of active window saved to clipboard"
-
 
 # Take a screenshot (whole screen)
 bindsym --to-code Ctrl+Print exec grim ~/Pictures/screenshots/screenshot-"$(date +%s)".png && notify-send "Screenshot of whole screen saved to folder"
