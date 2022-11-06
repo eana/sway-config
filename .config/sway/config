@@ -58,11 +58,12 @@ gaps inner 2
 exec --no-startup-id "swaybg -i ~/Pictures/wallpapers/hannah-grace-dSqWwzrLJaQ-unsplash.jpg -m fill"
 
 # Keyboard layout
-input * {
+input type:keyboard {
     repeat_delay 300
     repeat_rate 40
     xkb_layout us,se
     xkb_options grp:shift_caps_toggle
+    xkb_numlock enabled
 }
 
 # Touchpad configuration (swaymsg -t get_inputs)
