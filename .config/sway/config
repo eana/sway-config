@@ -40,6 +40,9 @@ set $gnomeschema org.gnome.desktop.interface
 
 # Monitors
 
+# Set the screen brightness to 20%
+exec --no-startup-id /usr/bin/light -s sysfs/backlight/gmux_backlight -S 20
+
 # Font
 font pango: SF Pro Text 10
 
@@ -341,9 +344,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
 exec ~/.config/sway/modules/critical_battery_beeper/critical_battery_beeper.py
 exec swayidle -w \
-    timeout 1200 'swaylock -c 000000' \
-    timeout 1300 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock  -c 000000'
 
 # Gtk applications settings
