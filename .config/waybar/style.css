@@ -6,11 +6,12 @@
   padding: 0;
   font-weight: normal;
   font-size: 9.5pt;
+  color: #ffffff;
 }
 
 #waybar {
   background-color: rgba(19, 13, 13, 0.5);
-  color: white;
+  color: #ffffff;
   font-family: SF Pro Text Regular, Cantarell, Noto Sans, sans-serif;
   font-size: 9.5pt;
 }
@@ -48,16 +49,16 @@
   border-bottom: 2.5px solid;
 }
 
+*:hover {
+  background: rgb(61, 56, 56);
+  box-shadow: inherit;
+}
+
 /* ---Left--- */
 #workspaces button {
   padding-left: 4px;
   padding-right: 4px;
   color: #ffffff;
-}
-
-#workspaces button:hover {
-  background: rgb(61, 56, 56);
-  box-shadow: inherit;
 }
 
 #workspaces button.focused {
@@ -87,6 +88,7 @@
 /* ---Right--- */
 #custom-keyboard-layout,
 #backlight,
+#clock,
 #pulseaudio,
 #network,
 #battery {
