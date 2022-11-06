@@ -8,6 +8,6 @@ profile multihead-lid-up {
 }
 
 profile multihead-lid-down {
-  output "HDMI-A-1" enable mode 3840x2160
+  output "HDMI-A-1" enable mode 3840x2160 scale 1.4
   output "eDP-1" disable
 }
