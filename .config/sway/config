@@ -62,7 +62,7 @@ input type:keyboard {
     repeat_delay 300
     repeat_rate 40
     xkb_layout us,se
-    xkb_options grp:shift_caps_toggle
+    xkb_options grp:alt_shift_toggle
     xkb_numlock enabled
 }
 
@@ -95,8 +95,9 @@ for_window [window_type="dialog"] floating enable
 for_window [app_id="lximage-qt"] floating enable
 
 for_window [app_id="google-chrome"] inhibit_idle fullscreen
-for_window [class="feh"] floating enable
+for_window [app_id="org.gnome.Calculator"] floating enable
 
+# for_window [class="feh"] floating enable
 # for_window [title="alsamixer"] floating enable border pixel 1
 # for_window [class="calamares"] floating enable border normal
 # for_window [class="Clipgrab"] floating enable
@@ -124,6 +125,7 @@ for_window [class="feh"] floating enable
 # for_window [class="Timeset-gui"] floating enable border normal
 # for_window [class="(?i)virtualbox"] floating enable border normal
 # for_window [class="Xfburn"] floating enable
+
 
 ### Key bindings ###
 
