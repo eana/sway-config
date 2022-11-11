@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["sway/workspaces", "custom/scratchpad-indicator", "custom/separator", "idle_inhibitor"],
     "modules-center": ["sway/mode"],
-    "modules-right": ["custom/keyboard-layout", "pulseaudio", "backlight", "battery", "custom/separator", "cpu", "memory", "custom/separator", "tray", "clock"],
+    "modules-right": ["sway/language", "pulseaudio", "backlight", "battery", "custom/separator", "cpu", "memory", "custom/separator", "tray", "clock"],
 
     "idle_inhibitor": {
         "format": "{icon}",
@@ -30,9 +30,9 @@
         "tooltip": false
     },
 
-    "custom/keyboard-layout": {
-        "exec": "~/.config/waybar/modules/kblayout",
-        "format": "  {}"
+    "sway/language": {
+        "format": "  {short}",
+        "tooltip": false
     },
 
     "custom/scratchpad-indicator": {
