@@ -74,6 +74,11 @@ input "1452:628:bcm5974" {
     middle_emulation enabled
 }
 
+input "1133:49257:Logitech_USB_Laser_Mouse" {
+    accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+    pointer_accel -0.1 # set mouse sensitivity (between -1 and 1)
+}
+
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
@@ -85,6 +90,7 @@ floating_modifier $mod normal
 
 # Link some programs to workspaces (swaymsg -t get_tree)
 assign [app_id="google-chrome"] workspace 1
+assign [app_id="firefox"] workspace 1
 assign [app_id="xfce4-terminal"] workspace 2
 assign [app_id="telegramdesktop"] workspace 7
 
