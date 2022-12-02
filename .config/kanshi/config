@@ -3,8 +3,8 @@ profile singlehead-lid-up {
 }
 
 profile multihead-lid-up {
-  output "eDP-1" enable position 0,0 mode 2880x1800 scale 1.4
-  output "HDMI-A-1" enable enable position 1440,0 mode 3840x2160 scale 1.4
+  output "eDP-1" enable position 0,257 mode 2880x1800 scale 1.4
+  output "HDMI-A-1" enable enable position 2059,0 mode 3840x2160 scale 1.4
 }
 
 profile multihead-lid-down {
