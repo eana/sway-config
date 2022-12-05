@@ -20,8 +20,6 @@
 #workspaces,
 #backlight,
 #custom-scratchpad-indicator,
-#custom-keyboard-layout,
-#custom-weather,
 #clock,
 #battery,
 #cpu,
@@ -38,7 +36,6 @@
 
 #workspaces button.focused,
 #backlight,
-#custom-keyboard-layout,
 #battery,
 #cpu,
 #memory,
@@ -86,17 +83,13 @@
 /* ---------- */
 
 /* ---Right--- */
-#custom-keyboard-layout,
+#language,
 #backlight,
 #clock,
 #pulseaudio,
 #network,
 #battery {
-  border-bottom-color: #752c4e;
-}
-
-#custom-keyboard-layout {
-  margin-left: 8px;
+  border-bottom: 2px solid #752c4e;
 }
 
 label:focus {
@@ -146,9 +139,16 @@ label:focus {
 }
 
 #tray {
-  border-bottom-color: #991121;
+  border-bottom: 2px solid #991121;
   margin-right: 2px;
 }
+
+#custom-poweroff {
+  color: white;
+  border-bottom: 2px solid red;
+  margin-right: 2px;
+}
+
 /* ---------- */
 
 #custom-separator {

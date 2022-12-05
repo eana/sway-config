@@ -106,14 +106,16 @@
 
   "battery": {
     "states": {
-      "full": 100,
-      "good": 99,
-      "empty": 5
+      "warning": 25,
+      "critical": 10
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+    "format-charging": " {icon} {capacity}%",
+    "format-full": " {icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "format-time": "{H}h{M}m",
+    "interval": 30,
+    "on-click": "gnome-power-statistics"
   },
 
   "cpu": {
@@ -178,6 +180,6 @@
   "custom/poweroff": {
     "tooltip": false,
     "format": "",
-    "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Poweroff' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Sleep' 'systemctl suspend' -b 'Logout' 'swaymsg exit'"
+    "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Poweroff' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Logout' 'swaymsg exit'"
   }
 }

@@ -102,6 +102,7 @@ for_window [app_id="lximage-qt"] floating enable
 
 for_window [app_id="google-chrome"] inhibit_idle fullscreen
 for_window [app_id="org.gnome.Calculator"] floating enable
+for_window [app_id="gnome-power-statistics"] floating enable
 
 # for_window [class="feh"] floating enable
 # for_window [title="alsamixer"] floating enable border pixel 1
