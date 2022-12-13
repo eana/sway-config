@@ -3,12 +3,6 @@
 # Logo key
 set $mod Mod4
 
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-
 # Workspace names
 set $ws1 1
 set $ws2 2
@@ -159,6 +153,7 @@ bindsym --to-code $mod+e exec $filer
 
 # Lock screen
 bindsym --to-code $mod+0 exec $locker
+bindsym --to-code $mod+l exec $locker
 
 # Color picker
 bindsym --to-code $mod+p exec swaynag -t mtype -m "$(grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-)" && notify-send "Color picked"
@@ -182,24 +177,12 @@ bindsym --to-code $mod+Ctrl+Print exec grim -g "$(slurp)" ~/Pictures/screenshots
 bindsym --to-code $mod+Ctrl+Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" ~/Pictures/screenshot-"$(date +%s)".png && notify-send "Screenshot of active window saved to folder"
 
 # Move your focus around
-bindsym --to-code $mod+$left focus left
-bindsym --to-code $mod+$down focus down
-bindsym --to-code $mod+$up focus up
-bindsym --to-code $mod+$right focus right
-
-# Or use $mod+[up|down|left|right]
 bindsym --to-code $mod+Left focus left
 bindsym --to-code $mod+Down focus down
 bindsym --to-code $mod+Up focus up
 bindsym --to-code $mod+Right focus right
 
 # Move the focused window with the same, but add Shift
-bindsym --to-code $mod+Shift+$left move left
-bindsym --to-code $mod+Shift+$down move down
-bindsym --to-code $mod+Shift+$up move up
-bindsym --to-code $mod+Shift+$right move right
-
-# Ditto, with arrow keys
 bindsym --to-code $mod+Shift+Left move left
 bindsym --to-code $mod+Shift+Down move down
 bindsym --to-code $mod+Shift+Up move up
@@ -282,12 +265,6 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym --to-code $left resize shrink width 10px
-    bindsym --to-code $down resize grow height 10px
-    bindsym --to-code $up resize shrink height 10px
-    bindsym --to-code $right resize grow width 10px
-
-    # Ditto, with arrow keys
     bindsym --to-code Left resize shrink width 10px
     bindsym --to-code Down resize grow height 10px
     bindsym --to-code Up resize shrink height 10px
