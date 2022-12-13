@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 24,
+  "height": 30,
   "modules-left": [
     "sway/workspaces",
     "custom/scratchpad-indicator",
@@ -141,8 +141,8 @@
     "on-click": "nm-connection-editor"
   },
   "network#ethernet": {
-    "interface": "eth*",
-    "format-ethernet": "",
+    "interface": "e*",
+    "format-ethernet": "🖧 ",
     "format-wifi": "",
     "format-linked": "",
     "format-disconnected": "",
@@ -150,7 +150,7 @@
     "on-click": "nm-connection-editor"
   },
   "network#wifi": {
-    "interface": "wlan*",
+    "interface": "wl*",
     "format-ethernet": "",
     "format-wifi": "  ({signalStrength}%)",
     "format-linked": "",
