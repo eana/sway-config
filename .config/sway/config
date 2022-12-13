@@ -348,7 +348,7 @@ exec --no-startup-id blueman-applet
 exec_always killall pulseaudio
 exec_always sh -c "pulseaudio --daemonize"
 exec pamac-tray
-exec --no-startup-id /usr/bin/redshift
+exec --no-startup-id /usr/bin/gammastep-indicator
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
 exec ~/.config/sway/modules/critical_battery_beeper/critical_battery_beeper.py

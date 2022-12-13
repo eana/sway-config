@@ -20,7 +20,7 @@ This repository is heavily inspired from [201dreamers/sway-config](https://githu
 - [network-manager-applet](https://archlinux.org/packages/extra/x86_64/network-manager-applet/) - wifi applet
 - [mako](https://archlinux.org/packages/community/x86_64/mako/) - notification manager
 - [earlyoom](https://archlinux.org/packages/community/x86_64/earlyoom/) - out of memory manager
-- [redshift-wayland](https://aur.archlinux.org/packages/redshift-wayland-git) - blue light filter
+- [gammastep](https://archlinux.org/packages/community/x86_64/gammastep/) - blue light filter
 - [blueman](https://archlinux.org/packages/community/x86_64/blueman/) - bluetooth applet
 - [parcellite](https://archlinux.org/packages/community/x86_64/parcellite/) - clipboard manager
 - [gthumb](https://archlinux.org/packages/extra/x86_64/gthumb/) - image viewer
