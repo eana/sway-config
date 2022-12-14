@@ -1,0 +1,16 @@
+# singlehead lid up - macbook pro
+profile singlehead-lid-up-mdp {
+  output "eDP-1" enable position 0,0 mode 2880x1800 scale 1.0
+}
+
+# multihead lid down - macbook pro
+profile multihead-lid-down-mbp {
+  output "eDP-1" disable
+  output "HDMI-A-1" enable mode 3840x2160 scale 1.0
+}
+
+# multihead lid up - macbook pro
+profile multihead-lid-up-mbp {
+  output "eDP-1" enable position 860,2160 mode 2880x1800 scale 1.0
+  output "DP-1" enable enable position 0,0 mode 3840x2160 scale 1.0
+}

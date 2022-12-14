@@ -1,16 +1,1 @@
-# singlehead lid up
-profile singlehead-lid-up {
-  output "eDP-1" enable position 0,0 mode 1920x1080 scale 1.0
-}
-
-# multihead lid down
-profile multihead-lid-down {
-  output "eDP-1" disable
-  output "DP-1" enable mode 3840x2160 scale 1.0
-}
-
-# multihead lid up
-profile multihead-lid-up {
-  output "eDP-1" enable position 860,2160 mode 1920x1080 scale 1.0
-  output "DP-1" enable enable position 0,0 mode 3840x2160 scale 1.0
-}
+./config.mbp

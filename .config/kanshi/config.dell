@@ -1,0 +1,16 @@
+# singlehead lid up dell
+profile singlehead-lid-up-dell {
+  output "eDP-1" enable position 0,0 mode 1920x1080 scale 1.0
+}
+
+# multihead lid down - dell precision
+profile multihead-lid-down-dell {
+  output "eDP-1" disable
+  output "DP-1" enable mode 3840x2160 scale 1.0
+}
+
+# multihead lid up - dell precision
+profile multihead-lid-up-dell {
+  output "eDP-1" enable position 860,2160 mode 1920x1080 scale 1.0
+  output "HDMI-A-1" enable enable position 0,0 mode 3840x2160 scale 1.0
+}
