@@ -1,6 +1,6 @@
 # singlehead lid up - macbook pro
 profile singlehead-lid-up-mdp {
-  output "eDP-1" enable position 0,0 mode 2880x1800 scale 1.0
+  output "eDP-1" enable position 0,0 mode 2880x1800 scale 1.5
 }
 
 # multihead lid down - macbook pro
