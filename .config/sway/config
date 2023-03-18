@@ -294,7 +294,7 @@ bindsym --to-code $mod+Delete exec swaynag -t mtype -m \
         bindsym b exec swaymsg exit
         bindsym l exec $locker, mode "default"
         bindsym e exec swaymsg exit, mode "default"
-        bindsym s exec $locker && systemctl suspend, mode "default"
+        bindsym s exec systemctl suspend, mode "default"
         bindsym r exec systemctl reboot, mode "default"
         bindsym Shift+s exec systemctl poweroff -i, mode "default"
 
