@@ -209,6 +209,10 @@ bindsym --to-code $mod+Shift+5 move container to workspace $ws5
 bindsym --to-code $mod+Shift+6 move container to workspace $ws6
 bindsym --to-code $mod+Shift+7 move container to workspace $ws7
 
+# Switch to the next/previous workspace
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
 # Media keys Volume Settings
 bindsym XF86AudioRaiseVolume exec pamixer -i 5 # to increase 5%
 bindsym XF86AudioLowerVolume exec pamixer -d 5 # to decrease 5%
