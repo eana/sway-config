@@ -37,6 +37,9 @@ set $gnomeschema org.gnome.desktop.interface
 # Set the screen brightness to 20%
 exec --no-startup-id /usr/bin/light -s sysfs/backlight/gmux_backlight -S 20
 
+# Start polkit agent
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+
 # Font
 font pango: SF Pro Text 10
 
