@@ -159,7 +159,7 @@
     "on-click": "nm-connection-editor"
   },
   "network#vpn": {
-    "interface": "wg0",
+    "interface": ["wg0", "tun0"],
     "format": "",
     "format-disconnected": "",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
