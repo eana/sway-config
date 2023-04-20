@@ -18,7 +18,8 @@
     "cpu",
     "memory",
     "custom/separator",
-    "network#vpn",
+    "network#wireguard",
+    "network#ovpn",
     "network#wifi",
     "network#ethernet",
     "network#disconnected",
@@ -158,8 +159,15 @@
     "tooltip-format": "{essid}: {ifname}: {ipaddr}/{cidr}",
     "on-click": "nm-connection-editor"
   },
-  "network#vpn": {
-    "interface": ["wg0", "tun0"],
+  "network#wireguard": {
+    "interface": "wg*",
+    "format": "",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "nm-connection-editor"
+  },
+  "network#ovpn": {
+    "interface": "tun*",
     "format": "",
     "format-disconnected": "",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
