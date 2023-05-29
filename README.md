@@ -29,6 +29,7 @@ This repository is heavily inspired from [201dreamers/sway-config](https://githu
 - [otf-font-awesome](https://archlinux.org/packages/community/any/otf-font-awesome/)/[ttf-font-awesome](https://archlinux.org/packages/community/any/ttf-font-awesome/)/[powerline-fonts](https://aur.archlinux.org/packages/powerline-fonts-git) - awesome font
 - [polkit](https://archlinux.org/packages/extra/x86_64/polkit/)/[polkit-gnome](https://archlinux.org/packages/community/x86_64/polkit-gnome/)
 - [kanshi](https://aur.archlinux.org/packages/kanshi-git) - dynamic screen configuration
+- [copyq](https://aur.archlinux.org/packages/copyq-git) - Clipboard manager with searchable and editable history
 
 ### Some features
 
