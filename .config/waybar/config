@@ -4,6 +4,7 @@
   "height": 30,
   "modules-left": [
     "sway/workspaces",
+    "custom/separator",
     "custom/scratchpad-indicator",
     "custom/separator",
     "idle_inhibitor"
@@ -80,9 +81,9 @@
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}%{format_source}",
-    "format-bluetooth": "{icon} {volume}%{format_source}",
-    "format-bluetooth-muted": " {icon}{format_source}",
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "🔇 {format_source}",
     "format-source": "  {volume}%",
     "format-source-muted": " ",
