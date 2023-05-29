@@ -162,6 +162,9 @@ bindsym --to-code $mod+e exec $filer
 bindsym --to-code $mod+0 exec $locker
 bindsym --to-code $mod+l exec $locker
 
+# Start CopyQ
+bindsym --to-code $mod+h exec "copyq show"
+
 # Color picker
 bindsym --to-code $mod+p exec swaynag -t mtype -m "$(grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-)" && notify-send "Color picked"
 
