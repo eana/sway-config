@@ -16,7 +16,7 @@ set $ws7 7
 set $locker swaylock -c 000000
 
 # Terminal emulator
-set $term xfce4-terminal
+set $term gnome-terminal
 
 # Application launcher
 set $menu fuzzel -w 60 | xargs swaymsg exec --
@@ -87,7 +87,6 @@ floating_modifier $mod normal
 
 # Link some programs to workspaces (swaymsg -t get_tree)
 assign [app_id="google-chrome"] workspace 1
-assign [app_id="firefox"] workspace 1
 assign [app_id="xfce4-terminal"] workspace 2
 assign [app_id="FreeTube"] workspace 3
 assign [app_id="org.telegram.desktop"] workspace 7
@@ -338,8 +337,8 @@ exec sleep 5
 exec --no-startup-id blueman-applet
 exec_always killall pulseaudio
 exec_always sh -c "pulseaudio --daemonize"
-exec pamac-tray
 exec --no-startup-id /usr/bin/gammastep-indicator
+exec --no-startup-id /usr/bin/copyq
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
 exec ~/.config/sway/modules/critical_battery_beeper/critical_battery_beeper.py
