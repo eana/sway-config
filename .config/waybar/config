@@ -162,15 +162,15 @@
     "on-click": "nm-connection-editor"
   },
   "network#wireguard": {
-    "interface": "wg*",
-    "format": "",
+    "interface": "compxtreme*",
+    "format": "🔒",
     "format-disconnected": "",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     "on-click": "nm-connection-editor"
   },
   "network#ovpn": {
     "interface": "tun*",
-    "format": "",
+    "format": "🔒",
     "format-disconnected": "",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     "on-click": "nm-connection-editor"
